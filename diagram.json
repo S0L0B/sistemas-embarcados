@@ -1,0 +1,637 @@
+{
+  "version": 1,
+  "author": "Projeto Escritorio Inteligente",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir",
+      "top": -150,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledG",
+      "top": -150,
+      "left": 250,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledR",
+      "top": -150,
+      "left": 300,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rG",
+      "top": -90,
+      "left": 245,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rR",
+      "top": -90,
+      "left": 295,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht",
+      "top": -150,
+      "left": 400,
+      "attrs": {
+        "temperature": "24"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": -150,
+      "left": 520,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz",
+      "top": -150,
+      "left": 650,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "kp",
+      "top": 120,
+      "left": 650,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 120,
+      "left": 300,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo",
+      "top": 280,
+      "left": 300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 330,
+      "left": 100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledL",
+      "top": 330,
+      "left": 20,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rL",
+      "top": 390,
+      "left": 15,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "swJan",
+      "top": 480,
+      "left": 20,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz2",
+      "top": 480,
+      "left": 120,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledJ",
+      "top": 480,
+      "left": 220,
+      "attrs": {
+        "color": "orange"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rJ",
+      "top": 540,
+      "left": 215,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnIn",
+      "top": 480,
+      "left": 330,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnOut",
+      "top": 480,
+      "left": 430,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "tm",
+      "top": 480,
+      "left": 540,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledLot",
+      "top": 480,
+      "left": 700,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rLot",
+      "top": 540,
+      "left": 695,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dhtUmidade",
+      "top": 620,
+      "left": 20,
+      "attrs": {
+        "temperature": "24",
+        "humidity": "50"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay2",
+      "top": 620,
+      "left": 250,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledB",
+      "top": 620,
+      "left": 400,
+      "attrs": {
+        "color": "blue"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rB",
+      "top": 680,
+      "left": 395,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "mega:22",
+      "pir:OUT",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "pir:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "pir:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:23",
+      "rG:1",
+      "green",
+      []
+    ],
+    [
+      "rG:2",
+      "ledG:A",
+      "green",
+      []
+    ],
+    [
+      "ledG:C",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "mega:24",
+      "rR:1",
+      "red",
+      []
+    ],
+    [
+      "rR:2",
+      "ledR:A",
+      "red",
+      []
+    ],
+    [
+      "ledR:C",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "mega:25",
+      "dht:SDA",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "dht:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.2",
+      "dht:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:26",
+      "relay:IN",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "relay:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.2",
+      "relay:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:27",
+      "bz:2",
+      "purple",
+      []
+    ],
+    [
+      "mega:GND.2",
+      "bz:1",
+      "black",
+      []
+    ],
+    [
+      "mega:30",
+      "kp:R1",
+      "green",
+      []
+    ],
+    [
+      "mega:31",
+      "kp:R2",
+      "green",
+      []
+    ],
+    [
+      "mega:32",
+      "kp:R3",
+      "green",
+      []
+    ],
+    [
+      "mega:33",
+      "kp:R4",
+      "green",
+      []
+    ],
+    [
+      "mega:34",
+      "kp:C1",
+      "blue",
+      []
+    ],
+    [
+      "mega:35",
+      "kp:C2",
+      "blue",
+      []
+    ],
+    [
+      "mega:36",
+      "kp:C3",
+      "blue",
+      []
+    ],
+    [
+      "mega:37",
+      "kp:C4",
+      "blue",
+      []
+    ],
+    [
+      "mega:20",
+      "lcd:SDA",
+      "green",
+      []
+    ],
+    [
+      "mega:21",
+      "lcd:SCL",
+      "blue",
+      []
+    ],
+    [
+      "mega:5V",
+      "lcd:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.3",
+      "lcd:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:9",
+      "servo:PWM",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "servo:V+",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.3",
+      "servo:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:A0",
+      "ldr:AO",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "ldr:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.3",
+      "ldr:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:4",
+      "rL:1",
+      "yellow",
+      []
+    ],
+    [
+      "rL:2",
+      "ledL:A",
+      "yellow",
+      []
+    ],
+    [
+      "ledL:C",
+      "mega:GND.3",
+      "black",
+      []
+    ],
+    [
+      "mega:40",
+      "swJan:2",
+      "green",
+      []
+    ],
+    [
+      "swJan:3",
+      "mega:GND.3",
+      "black",
+      []
+    ],
+    [
+      "mega:28",
+      "bz2:2",
+      "purple",
+      []
+    ],
+    [
+      "bz2:1",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "mega:29",
+      "rJ:1",
+      "orange",
+      []
+    ],
+    [
+      "rJ:2",
+      "ledJ:A",
+      "orange",
+      []
+    ],
+    [
+      "ledJ:C",
+      "mega:GND.2",
+      "black",
+      []
+    ],
+    [
+      "mega:42",
+      "btnIn:1.l",
+      "green",
+      []
+    ],
+    [
+      "btnIn:2.l",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:43",
+      "btnOut:1.l",
+      "red",
+      []
+    ],
+    [
+      "btnOut:2.l",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:44",
+      "tm:CLK",
+      "blue",
+      []
+    ],
+    [
+      "mega:45",
+      "tm:DIO",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "tm:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.1",
+      "tm:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:46",
+      "rLot:1",
+      "red",
+      []
+    ],
+    [
+      "rLot:2",
+      "ledLot:A",
+      "red",
+      []
+    ],
+    [
+      "ledLot:C",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "mega:47",
+      "dhtUmidade:SDA",
+      "green",
+      []
+    ],
+    [
+      "mega:5V",
+      "dhtUmidade:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.3",
+      "dhtUmidade:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:49",
+      "relay2:IN",
+      "orange",
+      []
+    ],
+    [
+      "mega:5V",
+      "relay2:VCC",
+      "red",
+      []
+    ],
+    [
+      "mega:GND.3",
+      "relay2:GND",
+      "black",
+      []
+    ],
+    [
+      "mega:50",
+      "rB:1",
+      "blue",
+      []
+    ],
+    [
+      "rB:2",
+      "ledB:A",
+      "blue",
+      []
+    ],
+    [
+      "ledB:C",
+      "mega:GND.3",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
