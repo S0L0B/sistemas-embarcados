@@ -47,4 +47,4 @@ src/controle_umidade.*    automação 7
 4. **Iluminação:** mude o slider de lux do LDR. Mais escuro, LED mais forte. Se estiver invertido, troque `LDR_VALOR_ALTO_E_CLARO` em `src/config.h`.
 5. **Janela:** a chave começa fechada. Ao abri-la, o alarme só soa após 5 s (buzzer e LED laranja piscando); ao fechar, silencia. Se o sentido da chave estiver invertido, vire a chave para o outro lado.
 6. **Contador:** o botão verde soma uma pessoa e o vermelho subtrai (mínimo 0). Com 5 pessoas ou mais o LED vermelho acende.
-7. **Caixa d'água:** ajuste a distância no HC-SR04. A partir de 80 cm (caixa baixa) a bomba liga; a 30 cm ou menos (caixa cheia) desliga. Entre 30 e 80 cm o estado se mantém.
+7. **Umidade:** altere a umidade no DHT22. Quando a umidade ficar em 40% ou menos, o umidificador liga; com 60% ou mais, ele desliga. Entre 40% e 60%, o estado anterior se mantém.
